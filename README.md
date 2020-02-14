@@ -1,19 +1,9 @@
-# potato_toolkit
+基于 https://github.com/CNOliverZhang/PotatofieldImageToolkit
 
-## Project setup
-```
-yarn install
-```
 
-### Compiles and hot-reloads for development
-```
-yarn serve
-```
+仅仅只是做了个  utools 插件的适配
 
-### Compiles and minifies for production
-```
-yarn build
-```
+功能完全未改动
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+
+源代码: https://github.com/utools-blowsnow/utools-potato-toolkit
