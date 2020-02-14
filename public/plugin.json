@@ -6,7 +6,7 @@
   "preload": "preload.js",
   "homepage": "https://github.com/utools-blowsnow/utools-potato-toolkit",
   "logo": "logo.png",
-  "version": "0.0.6",
+  "version": "1.0.0",
   "features": [
     {
       "code": "open",
