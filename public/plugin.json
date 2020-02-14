@@ -1,0 +1,17 @@
+{
+  "pluginName": "图像工具箱",
+  "description": "图像工具箱 基于 PotatofieldImageToolkit",
+  "author": "blowsnow",
+  "main": "index.html",
+  "preload": "preload.js",
+  "version": "0.0.6",
+  "features": [
+    {
+      "code": "open",
+      "explain": "图像工具箱",
+      "cmds":[
+        "图像工具箱"
+      ]
+    }
+  ]
+}

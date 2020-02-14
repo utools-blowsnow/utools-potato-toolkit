@@ -1,19 +1,85 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+    <router-view></router-view>
   </div>
 </template>
 
-<style lang="stylus">
-#app
-  font-family Avenir, Helvetica, Arial, sans-serif
-  -webkit-font-smoothing antialiased
-  -moz-osx-font-smoothing grayscale
-  text-align center
-  color #2c3e50
-  margin-top 60px
+<script>
+
+export default {
+  name: 'potatofield-image-toolkit',
+  mounted() {
+    let style = document.createElement('style')
+    this.$store.state.fonts.fontList.forEach((font) => {
+      style.appendChild(document.createTextNode(`
+        @font-face {
+            font-family: ${font.fontFamily};
+            src: url(${font.src})
+        }
+      `))
+    })
+    document.head.appendChild(style)
+    document.body.style.setProperty('--main-font', this.$store.state.fonts.defaultFont)
+
+
+    utools.onPluginEnter(({ code, type, payload }) => {
+    })
+  }
+}
+</script>
+
+<style lang="scss">
+:root {
+  --main-font: "NotoSansSCThin";
+  --main-color: #2196F3;
+  --warning-red: #F56C6C;
+  --black-gray: #303133;
+  --dark-gray: #606266;
+  --gray: #C0C4CC;
+  --light-gray: #DCDFE6;
+  --white-gray: #F5F7FA;
+  --white: #FFFFFF;
+  --transparent: rgba(255, 255, 255, 0);
+  --transparent-black-cover: rgba(0, 0, 0, 0.3);
+}
+
+body {
+  margin: 0;
+  font-family: var(--main-font);
+  cursor: default;
+  -webkit-app-region: drag;
+  user-select: none;
+  color: var(--dark-gray);
+}
+
+#app {
+  width: 100vw;
+  height: 100vh;
+}
+
+.interactable {
+  -webkit-app-region: no-drag;
+}
+
+.title {
+  font-size: 32px;
+  line-height: 1.6em;
+}
+
+.subtitle {
+  font-size: 18px;
+  line-height: 1.6em;
+}
+
+.text {
+  font-size: 14px;
+  line-height: 1.6em;
+  text-align: justify;
+}
+
+.subtext {
+  font-size: 12px;
+  line-height: 1.6em;
+  text-align: justify;
+}
 </style>
